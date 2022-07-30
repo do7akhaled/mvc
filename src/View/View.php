@@ -9,7 +9,7 @@ class View
         $baseContent = self::getBaseContent();
         $viewContent = self::getViewContent($view, params: $params);
 
-        return (str_replace('{{content}}', $viewContent, $baseContent));
+         return (str_replace('{{content}}', $viewContent, $baseContent));
 
     }
 

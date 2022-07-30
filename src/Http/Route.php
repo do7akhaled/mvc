@@ -32,18 +32,18 @@ class Route
         $action =  self::$routes[$method][$path] ?? false;
 
         if (!$action)
-            return View::makeError(404);
+            View::makeError(404);
 
         if ($action instanceof \Closure)
-            return call_user_func_array($action, []);
+            call_user_func_array($action, []);
 
         if (is_array($action))
-            return call_user_func([ new $action[0], $action[1] ]);
+            call_user_func([ new $action[0], $action[1] ]);
 
         if (is_string($action))
         {
             [$controller, $method] = explode('@', $action);
-            return call_user_func([ new $controller, $method ]);
+            call_user_func([ new $controller, $method ]);
         }
 
 

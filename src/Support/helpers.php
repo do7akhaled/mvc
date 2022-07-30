@@ -48,3 +48,17 @@ if (!function_exists('assets'))
         return base_path('public/assets/' . $path);
     }
 }
+
+if (!function_exists('app'))
+{
+    function app(): \Do7a\Mvc\Application
+    {
+        static $instance = null;
+
+        if ($instance === null)
+        {
+            $instance = new Do7a\Mvc\Application();
+        }
+        return $instance;
+    }
+}

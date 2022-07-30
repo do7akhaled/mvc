@@ -12,5 +12,4 @@ $env = \Dotenv\Dotenv::createImmutable(base_path());
 
 $env->load();
 
-//$request = new \Do7a\Mvc\Http\Request();
-//(new \Do7a\Mvc\Http\Route($request))->resolve();
+app()->run();
