@@ -1,0 +1,21 @@
+{
+    "name": "do7a/mvc",
+    "autoload": {
+        "psr-4": {
+            "Do7a\\Mvc\\": "src/",
+            "App\\" : "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "do7akhaled",
+            "email": "do7a.khaled@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.1"
+    }
+}
