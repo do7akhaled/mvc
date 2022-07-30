@@ -35,9 +35,9 @@ if (!function_exists('view_path'))
 
 if (!function_exists('view'))
 {
-    function view($view,  $params = [])
+    function view($view,  $params = []): void
     {
-        return (new Do7a\Mvc\View\View())::make($view, $params);
+        echo (new Do7a\Mvc\View\View())::make($view, $params);
     }
 }
 
