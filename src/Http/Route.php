@@ -2,6 +2,8 @@
 
 namespace Do7a\Mvc\Http;
 
+use Do7a\Mvc\View\View;
+
 class Route
 {
     protected static array $routes = [];
@@ -30,7 +32,7 @@ class Route
         $action =  self::$routes[$method][$path] ?? false;
 
         if (!$action)
-            return false;
+            return View::makeError(404);
 
         if ($action instanceof \Closure)
             return call_user_func_array($action, []);

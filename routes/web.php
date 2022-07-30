@@ -3,6 +3,4 @@
 
 use Do7a\Mvc\Http\Route;
 
-Route::get('/', function () {
-    return 'Hello World!';
-});
+Route::get('/home', [\App\Controllers\HomeController::class, 'index']);
