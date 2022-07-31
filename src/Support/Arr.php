@@ -139,23 +139,24 @@ class Arr
             return $array;
         }
 
+
+
+
         $subArray = &$array;
         $segments = explode('.', $key);
+
+
         foreach ( $segments as $segment)
         {
-            if (self::exists($subArray, $segment) && self::accessible($subArray[$segment]))
-            {
-                if ($segment != end($segments))
-                    $subArray = &$subArray[$segment];
-            } else {
-                return $array;
-            }
+            if ($segment == end($segments))
+                $subArray[$segment] = $value;
+            else
+                $subArray = &$subArray[$segment];
 
 
         }
 
-        if (self::exists($subArray, end($segments)))
-            $subArray[end($segments)] = $value;
+
 
         return $array;
     }

@@ -25,6 +25,29 @@ if (!function_exists('base_path'))
     }
 }
 
+if (!function_exists('config'))
+{
+    function config($key = null, $default = null)
+    {
+        if (is_null($key))
+            return app()->config;
+
+        if (is_array($key))
+            return app()->config->set($key);
+
+        return app()->config->get($key, $default);
+
+
+    }
+}
+
+if (!function_exists('config_path'))
+{
+    function config_path($path = ''): string
+    {
+        return base_path('config/' . $path);
+    }
+}
 if (!function_exists('view_path'))
 {
     function view_path($path = ''): string

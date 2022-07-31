@@ -23,11 +23,8 @@ $arr = [
     'test' => []
 ];
 
-$arr = \Do7a\Mvc\Support\Arr::flatten($arr);
 
 
-
-dd($arr);
 
 app()->run();
 
