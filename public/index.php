@@ -12,4 +12,23 @@ $env = \Dotenv\Dotenv::createImmutable(base_path());
 
 $env->load();
 
+$arr = [
+    'db' =>[
+        'connections' => [
+            'default' => 'mysql',
+            'mine' => 'test'
+        ]
+    ],
+    'eloquent' => 'dd',
+    'test' => []
+];
+
+$arr = \Do7a\Mvc\Support\Arr::flatten($arr);
+
+
+
+dd($arr);
+
 app()->run();
+
+
